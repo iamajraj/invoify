@@ -1,36 +1,178 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Invoify
 
-## Getting Started
+![Invoify Logo](./public/screenshots/dashboard.png)
 
-First, run the development server:
+> Professional invoicing platform for modern businesses
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Invoify is a comprehensive invoicing and business management platform built with Next.js, designed to help businesses create professional invoices, manage clients, and track financial performance with ease.
+
+## ✨ Features
+
+- **📄 Professional Invoices** - Create stunning invoices with customizable templates
+- **👥 Client Management** - Organize and manage client relationships
+- **📊 Analytics Dashboard** - Track business performance and revenue insights
+- **🏢 Company Profiles** - Add company branding to invoices
+- **🔒 Secure & Private** - Your invoices data are secured and private
+- **📱 PDF Generation** - Instant PDF downloads with professional layouts
+- **🎨 Modern UI** - Beautiful, responsive interface with premium design
+
+## 🚀 Screenshots
+
+### Dashboard Overview
+
+![Dashboard](./public/screenshots/dashboard.png)
+
+### Invoice Creation
+
+![Create Invoice](./public/screenshots/create-invoice.png)
+
+### Client Management
+
+![Clients](./public/screenshots/clients.png)
+
+### Analytics Dashboard
+
+![Analytics](./public/screenshots/analytics.png)
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js 16, React 19, TypeScript
+- **Styling**: Tailwind CSS, shadcn/ui components
+- **Database**: SQLite with Prisma ORM
+- **Authentication**: NextAuth.js
+- **Charts**: Recharts
+- **PDF Generation**: jsPDF, html2canvas
+
+## 📦 Installation
+
+### Prerequisites
+
+- Node.js 18+
+- npm, yarn, pnpm, or bun
+- SQLite (included with Prisma)
+
+### Setup
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/iamajraj/invoify.git
+   cd invoify
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. **Set up the database**
+
+   ```bash
+   npx prisma generate
+   npx prisma db push
+   ```
+
+4. **Configure environment variables**
+
+   ```bash
+   cp .env.example .env.local
+   ```
+
+   Edit `.env.local` with your configuration:
+
+   ```env
+   DATABASE_URL="file:./dev.db"
+   NEXTAUTH_URL="http://localhost:3000"
+   NEXTAUTH_SECRET="your-secret-key-here"
+   ```
+
+5. **Start the development server**
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+6. **Open your browser**
+
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 📖 Usage
+
+### Getting Started
+
+1. **Sign up** for a new account or **sign in** if you already have one
+2. **Create your company profile** in the Companies section
+3. **Add clients** to manage your customer relationships
+4. **Create invoices** using the intuitive form builder
+5. **Download PDFs** or track payment status in the dashboard
+
+### Key Workflows
+
+#### Creating Your First Invoice
+
+1. Navigate to **Dashboard → Invoices → New Invoice**
+2. Select your **company profile** as the sender
+3. Choose or **add a client**
+4. **Add line items** with descriptions, quantities, and prices
+5. Set **tax rates** and **payment terms**
+6. **Preview and download** the PDF
+
+#### Managing Clients
+
+1. Go to **Dashboard → Clients**
+2. Click **"Add Client"** to create new client profiles
+3. Include contact information, addresses, and notes
+4. View **invoice history** for each client
+
+#### Company Branding
+
+1. Visit **Dashboard → Companies**
+2. Add your **company name**, contact details, and branding
+3. Your information will **automatically appear** on all invoices
+
+## 📁 Project Structure
+
+```
+invoify/
+├── app/
+│   ├── api/                      # API routes
+│   ├── auth/                     # Authentication pages
+│   ├── dashboard/                # Dashboard pages
+│   ├── privacy/                  # Privacy policy
+│   ├── terms/                    # Terms of service
+│   └── page.tsx                  # Homepage
+├── components/                   # Reusable components
+│   ├── ui/                       # shadcn/ui components
+│   └── dashboard-layout.tsx      # Dashboard layout
+├── lib/                          # Utility libraries
+│   ├── auth.ts                   # NextAuth configuration
+│   ├── prisma.ts                 # Database client
+│   └── utils.ts                  # Helper functions
+├── prisma/                       # Database schema
+│   └── schema.prisma
+├── public/
+│   └── screenshots/              # Application screenshots
+└── types/                        # TypeScript type definitions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📄 License
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All rights reserved. This project is proprietary software.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🙋 Support
 
-## Learn More
+- **Issues**: Report bugs on [GitHub Issues](https://github.com/iamajraj/invoify/issues)
+- **Discussions**: Join the conversation on [GitHub Discussions](https://github.com/iamajraj/invoify/discussions)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with ❤️ by [Muhammad Raj](https://www.github.com/iamajraj)
