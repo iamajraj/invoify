@@ -1,6 +1,6 @@
 # Invoify
 
-![Invoify Logo](./public/screenshots/dashboard.png)
+![Invoify Logo](./public/screenshots/home.png)
 
 > Professional invoicing platform for modern businesses
 
