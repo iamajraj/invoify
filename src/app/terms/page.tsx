@@ -179,7 +179,7 @@ export default function TermsPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Governing Law</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                These Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law provisions. Any disputes arising from these Terms shall be resolved in the courts of [Your Jurisdiction].
+                These Terms shall be governed by and construed in accordance with the laws of Xyz, without regard to its conflict of law provisions. Any disputes arising from these Terms shall be resolved in the courts of Xyz.
               </p>
             </section>
 
