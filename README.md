@@ -38,7 +38,7 @@ Invoify is a comprehensive invoicing and business management platform built with
 
 - **Frontend**: Next.js 16, React 19, TypeScript
 - **Styling**: Tailwind CSS, shadcn/ui components
-- **Database**: SQLite with Prisma ORM
+- **Database**: PostgreSQL with Prisma ORM
 - **Authentication**: NextAuth.js
 - **Charts**: Recharts
 - **PDF Generation**: jsPDF, html2canvas
@@ -49,7 +49,7 @@ Invoify is a comprehensive invoicing and business management platform built with
 
 - Node.js 18+
 - npm, yarn, pnpm, or bun
-- SQLite (included with Prisma)
+- PostgreSQL database (local or cloud)
 
 ### Setup
 
@@ -70,12 +70,21 @@ Invoify is a comprehensive invoicing and business management platform built with
    pnpm install
    ```
 
-3. **Set up the database**
+3. **Set up PostgreSQL database**
 
+   **Option A: Local PostgreSQL**
    ```bash
-   npx prisma generate
-   npx prisma db push
+   # Install PostgreSQL locally (macOS with Homebrew)
+   brew install postgresql
+   brew services start postgresql
+
+   # Create database
+   createdb invoify_dev
    ```
+
+   **Option B: Cloud PostgreSQL (Recommended for production)**
+   - Use services like: Neon, Supabase, PlanetScale
+   - Get your connection URL
 
 4. **Configure environment variables**
 
@@ -86,12 +95,24 @@ Invoify is a comprehensive invoicing and business management platform built with
    Edit `.env.local` with your configuration:
 
    ```env
-   DATABASE_URL="file:./dev.db"
+   # For local PostgreSQL
+   DATABASE_URL="postgresql://username:password@localhost:5432/invoify_dev"
+
+   # For cloud PostgreSQL (use the connection string provided by your service)
+   # DATABASE_URL="postgresql://username:password@host:port/database"
+
    NEXTAUTH_URL="http://localhost:3000"
-   NEXTAUTH_SECRET="your-secret-key-here"
+   NEXTAUTH_SECRET="your-secret-key-here-change-this-in-production"
    ```
 
-5. **Start the development server**
+5. **Set up the database schema**
+
+   ```bash
+   npx prisma generate
+   npx prisma db push
+   ```
+
+7. **Start the development server**
 
    ```bash
    npm run dev
@@ -101,7 +122,7 @@ Invoify is a comprehensive invoicing and business management platform built with
    pnpm dev
    ```
 
-6. **Open your browser**
+8. **Open your browser**
 
    Navigate to [http://localhost:3000](http://localhost:3000)
 
